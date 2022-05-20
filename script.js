@@ -1,34 +1,25 @@
 "use strict";
-// Player plays rock
-// If computer plays scissors computer loses
-// Else
-// If computer plays paper, computer wins
-
-// function playRound(playerSelection, computerSelection) {
-//   if (computerSelection == "scissors") {
-//     return ("You win! Rock beats Scissors");
-//   } else if (computerSelection == "paper") {
-//     return ("You Lose! Paper beats Rock");
-//   }
-// }
-
-// Player plays rock
-// Generate random selection of rock, paper, or scissors
-// Computer plays a random selection of rock, paper, or scissors
-// If computer plays paper, computer wins
-// If computer plays scissors, computer loses
-// If computer plays rock, the game ends in a tie
 
 const rps = ["rock", "paper", "scissors"];
 
-// Is computerPlay() being called on load? Does it matter? Should it be a function expression instead?
+// Wrote userPlay() as a function expression to ensure it does not get called
+// on load, and only gets called once playRound() is called. Yes, I'm dumb.
+
+const userPlay = function () {
+  return prompt("Rock, Paper, or Scissors?");
+};
+const computerSelection = computerPlay();
+console.log(playRound());
+
+// Is computerPlay() being called on load? Does it matter? Should it be a function
+// expression instead?
 
 function computerPlay() {
   return rps[Math.floor(Math.random() * rps.length)];
 }
 
 function playRound(playerSelection, computerSelection) {
-  playerSelection = userPlay().toLowerCase();
+  playerSelection = userPlay().toLowerCase(); // Learned new toLowerCase() syntax. Don't forget!!!
   computerSelection = computerPlay().toLowerCase();
   if (computerSelection == "scissors" && playerSelection == "rock") {
     return "You win! Rock beats Scissors.";
@@ -46,21 +37,17 @@ function playRound(playerSelection, computerSelection) {
     return "You tie.";
   } else if (computerSelection == "rock" && playerSelection == "paper") {
     return "You win! Paper beats Rock.";
-  } else if (computerPlay == "rock" && playerSelection == "scissors") {
+  } else if (computerSelection == "rock" && playerSelection == "scissors") {
     return "You lose! Rock beats Scissors.";
   }
 }
 
-//  Wrote userPlay() as a function expression to ensure it does not get called on load, and only gets called once playRound() is called
-
-const userPlay = function () {
-  return prompt("Rock, Paper, or Scissors?");
-};
-const computerSelection = computerPlay();
-console.log(playRound());
+// Loops game 5 times by counting up from 0
 
 function game() {
   for (let i = 0; i < 5; i++) {
     console.log(playRound());
   }
 }
+
+
