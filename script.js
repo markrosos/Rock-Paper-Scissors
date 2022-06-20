@@ -96,7 +96,7 @@ function finishGame() {
 
 const resetButton = document.createElement('button');
 
-function newButton() {
+function resetBtn() {
   // Appends or unhides the resetButton element, hides it upon click, and re-enables other buttons
   reset.appendChild(resetButton);
   resetButton.innerHTML = 'Reset Game';
@@ -108,10 +108,10 @@ function newButton() {
 
 function gameScore() {
   if (playerScore === 5) {
-    newButton(), disableBtn();
+    resetBtn(), disableBtn();
     return 'You win the game.';
   } else if (computerScore === 5) {
-    newButton(), disableBtn();
+    resetBtn(), disableBtn();
     return 'Computer wins. You lose the game.';
   }
 }
