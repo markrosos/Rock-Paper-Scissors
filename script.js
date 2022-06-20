@@ -1,6 +1,6 @@
 'use strict';
 
-const rockButton = document.querySelector('#rockButton');    
+const rockButton = document.querySelector('#rockButton');
 rockButton.addEventListener('click', function (e) {
   (results.textContent = playRound('rock')),
     ((score.textContent = finalScore()), (endGame.textContent = gameScore()));
@@ -75,42 +75,43 @@ function finalScore() {
 }
 
 function disableBtn() {
-    document.getElementById("rockButton").disabled = true;
-    document.getElementById("paperButton").disabled = true;
-    document.getElementById("scissorsButton").disabled = true;
-  }
-  
-  function enableBtn() {
-    document.getElementById("rockButton").disabled = false;
-    document.getElementById("paperButton").disabled = false;
-    document.getElementById("scissorsButton").disabled = false;
-  }
-  
-  function finishGame() {
-    playerScore = 0;
-    computerScore = 0;
-    score.innerHTML = ``;
-    endGame.innerHTML = ``;
-    results.innerHTML = ``;
-  }
+  document.getElementById('rockButton').disabled = true;
+  document.getElementById('paperButton').disabled = true;
+  document.getElementById('scissorsButton').disabled = true;
+}
 
-  const resetButton = document.createElement('button');
-  
-  function newButton() { // Appends or unhides the resetButton element, hides it upon click, and re-enables other buttons
-    reset.appendChild(resetButton);
-    resetButton.innerHTML = 'Reset Game';
-    resetButton.style.visibility = 'visible';
-    resetButton.addEventListener('click', function () {
-      resetButton.style.visibility = 'hidden', finishGame(), enableBtn(); 
-    });
+function enableBtn() {
+  document.getElementById('rockButton').disabled = false;
+  document.getElementById('paperButton').disabled = false;
+  document.getElementById('scissorsButton').disabled = false;
+}
+
+function finishGame() {
+  playerScore = 0;
+  computerScore = 0;
+  score.innerHTML = ``;
+  endGame.innerHTML = ``;
+  results.innerHTML = ``;
+}
+
+const resetButton = document.createElement('button');
+
+function newButton() {
+  // Appends or unhides the resetButton element, hides it upon click, and re-enables other buttons
+  reset.appendChild(resetButton);
+  resetButton.innerHTML = 'Reset Game';
+  resetButton.style.visibility = 'visible';
+  resetButton.addEventListener('click', function () {
+    (resetButton.style.visibility = 'hidden'), finishGame(), enableBtn();
+  });
+}
+
+function gameScore() {
+  if (playerScore === 5) {
+    newButton(), disableBtn();
+    return 'You win the game.';
+  } else if (computerScore === 5) {
+    newButton(), disableBtn();
+    return 'Computer wins. You lose the game.';
   }
-  
-  function gameScore() {
-    if (playerScore === 5) {
-      newButton(), disableBtn();
-      return 'You win the game.';
-    } else if (computerScore === 5) {
-      newButton(), disableBtn();
-      return 'Computer wins. You lose the game.';
-    } 
-  }
+}
