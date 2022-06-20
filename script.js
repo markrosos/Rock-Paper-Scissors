@@ -96,8 +96,7 @@ function finishGame() {
 
 const resetButton = document.createElement('button');
 
-function resetBtn() {
-  // Appends or unhides the resetButton element, hides it upon click, and re-enables other buttons
+function resetBtn() {  // Appends or unhides the resetButton element, hides it upon click, and re-enables other buttons
   reset.appendChild(resetButton);
   resetButton.innerHTML = 'Reset Game';
   resetButton.style.visibility = 'visible';
