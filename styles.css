@@ -1,0 +1,52 @@
+body {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+}
+
+#buttonContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 2em;
+  gap: 1em;
+}
+
+#buttons {
+  display: flex;
+  justify-content: space-around;
+  width: 300px;
+}
+
+#rockButton,
+#scissorsButton,
+#paperButton {
+  width: 85px;
+}
+
+#container {
+  display: flex;
+  flex: 0;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.7em;
+  color: white;
+  height: 200px;
+}
+
+#results {
+  display: flex;
+  color: white;
+}
+
+#score {
+  display: flex;
+}
+
+#reset {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
