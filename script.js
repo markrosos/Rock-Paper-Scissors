@@ -1,5 +1,3 @@
-'use strict';
-
 let computerScore = 0;
 let playerScore = 0;
 
@@ -38,7 +36,7 @@ const playRound = function (playerSelection, computerSelection) {
 };
 
 const finalScore = () => { // Displays score after each round
-  return `Player: ${playerScore}\u00A0\u00A0\u00A0 Computer: ${computerScore}`; // Strings between backticks = template literal. \u00A0 (Non Breaking Whitespace?) is ugly, but works?
+  return `Player: ${playerScore}\u00A0\u00A0\u00A0 Computer: ${computerScore}`; // \u00A0 (Non Breaking Whitespace?) is ugly, but works?
 };
 
 const gameResult = () => { // Shows winner or loser of game, shows reset button, disables top buttons
@@ -53,7 +51,7 @@ const gameResult = () => { // Shows winner or loser of game, shows reset button,
 
 const resetButton = document.createElement('button'); // Has no class name until given one?
 
-const resetBtn = () => {  // Appends and unhides the resetButton element, hides it upon click, and re-enables other buttons
+const resetBtn = () => { // Appends and unhides the resetButton element, hides it upon click, and re-enables other buttons
   reset.appendChild(resetButton);
   resetButton.className = 'resetButton'; // Gave element class name to style it
   resetButton.innerHTML = 'Reset Game';
@@ -72,33 +70,33 @@ const finishGame = () => { // Resets scores
 };
 
 const disableBtn = () => {
-  document.getElementById('rockButton').disabled = true;
-  document.getElementById('paperButton').disabled = true;
-  document.getElementById('scissorsButton').disabled = true;
+  document.querySelectorAll('#scissorsBtn,#rockBtn,#paperBtn').forEach((item) => {
+      item.disabled = true;
+    });
 };
 
 const enableBtn = () => {
-  document.getElementById('rockButton').disabled = false;
-  document.getElementById('paperButton').disabled = false;
-  document.getElementById('scissorsButton').disabled = false;
+  document.querySelectorAll('#scissorsBtn,#rockBtn,#paperBtn').forEach((item) => {
+      item.disabled = false;
+    });
 };
 
-const rockButton = document.querySelector('#rockButton');
-rockButton.addEventListener('click', () => {
+const rockBtn = document.querySelector('#rockBtn');
+rockBtn.addEventListener('click', () => {
   (results.textContent = playRound('rock')),
     (score.textContent = finalScore()),
     (endGame.textContent = gameResult());
 });
 
-const paperButton = document.querySelector('#paperButton');
-paperButton.addEventListener('click', () => {
+const paperBtn = document.querySelector('#paperBtn');
+paperBtn.addEventListener('click', () => {
   (results.textContent = playRound('paper')),
     (score.textContent = finalScore()),
     (endGame.textContent = gameResult());
 });
 
-const scissorsButton = document.querySelector('#scissorsButton');
-scissorsButton.addEventListener('click', () => {
+const scissorsBtn = document.querySelector('#scissorsBtn');
+scissorsBtn.addEventListener('click', () => {
   (results.textContent = playRound('scissors')),
     (score.textContent = finalScore()),
     (endGame.textContent = gameResult());

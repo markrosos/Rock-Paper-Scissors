@@ -18,9 +18,9 @@ body {
   width: 300px;
 }
 
-#rockButton,
-#scissorsButton,
-#paperButton {
+#rockBtn,
+#scissorsBtn,
+#paperBtn {
   width: 85px;
   color: black;
 }
