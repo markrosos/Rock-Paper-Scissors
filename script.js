@@ -1,21 +1,24 @@
 'use strict';
 
 const rockButton = document.querySelector('#rockButton');
-rockButton.addEventListener('click', function (e) {
+rockButton.addEventListener('click', () => {
   (results.textContent = playRound('rock')),
-    (score.textContent = finalScore()), (endGame.textContent = gameScore());
+    (score.textContent = finalScore()),
+    (endGame.textContent = gameScore());
 });
 
 const paperButton = document.querySelector('#paperButton');
-paperButton.addEventListener('click', function (e) {
+paperButton.addEventListener('click', () => {
   (results.textContent = playRound('paper')),
-    (score.textContent = finalScore()), (endGame.textContent = gameScore());
+    (score.textContent = finalScore()),
+    (endGame.textContent = gameScore());
 });
 
 const scissorsButton = document.querySelector('#scissorsButton');
-scissorsButton.addEventListener('click', function (e) {
+scissorsButton.addEventListener('click', () => {
   (results.textContent = playRound('scissors')),
-    (score.textContent = finalScore()), (endGame.textContent = gameScore());
+    (score.textContent = finalScore()),
+    (endGame.textContent = gameScore());
 });
 
 const container = document.querySelector('#container');
@@ -30,7 +33,7 @@ container.appendChild(endGame);
 
 const rps = ['rock', 'paper', 'scissors'];
 
-const computerPlay = function () {
+const computerPlay = () => {
   return rps[Math.floor(Math.random() * rps.length)];
 };
 
@@ -97,11 +100,12 @@ function finishGame() {
 
 const resetButton = document.createElement('button');
 
-function resetBtn() {  // Appends or unhides the resetButton element, hides it upon click, and re-enables other buttons
+function resetBtn() {
+  // Appends or unhides the resetButton element, hides it upon click, and re-enables other buttons
   reset.appendChild(resetButton);
   resetButton.innerHTML = 'Reset Game';
   resetButton.style.visibility = 'visible';
-  resetButton.addEventListener('click', function () {
+  resetButton.addEventListener('click', () => {
     (resetButton.style.visibility = 'hidden'), finishGame(), enableBtn();
   });
 }
