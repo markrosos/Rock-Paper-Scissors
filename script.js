@@ -71,7 +71,8 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function finalScore() {
-  return 'Player: ' + playerScore + ' ' + 'Computer ' + computerScore;
+  // return 'Player: ' + playerScore + ' ' + 'Computer ' + computerScore; // Old method
+  return `Player: ${playerScore}\u00A0\u00A0\u00A0 Computer: ${computerScore}`; // Strings between backticks = template literal. \u00A0 (Non Breaking Whitespace?) is ugly, but works?
 }
 
 function disableBtn() {
