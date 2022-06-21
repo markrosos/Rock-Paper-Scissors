@@ -12,22 +12,18 @@ const playRound = function (playerSelection, computerSelection) {
   let lose = `You lose! ${computerSelection} beats ${playerSelection}`;
   let win = `You win! ${playerSelection} beats ${computerSelection}`;
   let draw = 'You tie.';
-  if (computerSelection == 'scissors' && playerSelection == 'rock') {
+  if (
+    (computerSelection == 'scissors' && playerSelection == 'rock') ||
+    (computerSelection == 'paper' && playerSelection == 'scissors') ||
+    (computerSelection == 'rock' && playerSelection == 'paper')
+  ) {
     playerScore++;
     return win;
-  } else if (computerSelection == 'scissors' && playerSelection == 'paper') {
-    computerScore++;
-    return lose;
-  } else if (computerSelection == 'paper' && playerSelection == 'rock') {
-    computerScore++;
-    return lose;
-  } else if (computerSelection == 'paper' && playerSelection == 'scissors') {
-    playerScore++;
-    return win;
-  } else if (computerSelection == 'rock' && playerSelection == 'paper') {
-    playerScore++;
-    return win;
-  } else if (computerSelection == 'rock' && playerSelection == 'scissors') {
+  } else if (
+    (computerSelection == 'scissors' && playerSelection == 'paper') ||
+    (computerSelection == 'paper' && playerSelection == 'rock') ||
+    (computerSelection == 'rock' && playerSelection == 'scissors')
+  ) {
     computerScore++;
     return lose;
   } else if (computerSelection === playerSelection) {
@@ -61,7 +57,7 @@ const resetBtn = () => { // Appends and unhides the resetButton element, hides i
   });
 };
 
-const finishGame = () => { // Resets scores
+const finishGame = () => {// Resets scores
   playerScore = 0;
   computerScore = 0;
   score.innerHTML = ``;
