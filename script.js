@@ -3,19 +3,19 @@
 const rockButton = document.querySelector('#rockButton');
 rockButton.addEventListener('click', function (e) {
   (results.textContent = playRound('rock')),
-    ((score.textContent = finalScore()), (endGame.textContent = gameScore()));
+    (score.textContent = finalScore()), (endGame.textContent = gameScore());
 });
 
 const paperButton = document.querySelector('#paperButton');
 paperButton.addEventListener('click', function (e) {
   (results.textContent = playRound('paper')),
-    ((score.textContent = finalScore()), (endGame.textContent = gameScore()));
+    (score.textContent = finalScore()), (endGame.textContent = gameScore());
 });
 
 const scissorsButton = document.querySelector('#scissorsButton');
 scissorsButton.addEventListener('click', function (e) {
   (results.textContent = playRound('scissors')),
-    ((score.textContent = finalScore()), (endGame.textContent = gameScore()));
+    (score.textContent = finalScore()), (endGame.textContent = gameScore());
 });
 
 const container = document.querySelector('#container');
