@@ -22,6 +22,12 @@ body {
 #scissorsButton,
 #paperButton {
   width: 85px;
+  color: black;
+}
+
+.resetButton {
+    width: 100px;
+    color: black;
 }
 
 #container {
@@ -38,10 +44,6 @@ body {
 #results {
   display: flex;
   color: white;
-}
-
-#score {
-  display: flex;
 }
 
 #reset {

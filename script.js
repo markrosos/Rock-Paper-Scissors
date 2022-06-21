@@ -98,11 +98,12 @@ function finishGame() {
   results.innerHTML = ``;
 }
 
-const resetButton = document.createElement('button');
+const resetButton = document.createElement('button'); // Has no class name until given one?
 
 function resetBtn() {
   // Appends or unhides the resetButton element, hides it upon click, and re-enables other buttons
   reset.appendChild(resetButton);
+  resetButton.className = 'resetButton'; // Gave element class name to style it
   resetButton.innerHTML = 'Reset Game';
   resetButton.style.visibility = 'visible';
   resetButton.addEventListener('click', () => {
