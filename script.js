@@ -48,7 +48,7 @@ let draw = 'You tie.';
 let playerScore = 0;
 let computerScore = 0;
 
-function playRound(playerSelection, computerSelection) {
+const playRound = function (playerSelection, computerSelection) {
   computerSelection = computerPlay();
   if (computerSelection == 'scissors' && playerSelection == 'rock') {
     playerScore++;
@@ -71,26 +71,26 @@ function playRound(playerSelection, computerSelection) {
   } else if (computerSelection === playerSelection) {
     return draw;
   }
-}
+};
 
-function finalScore() {
+const finalScore = () => {
   // return 'Player: ' + playerScore + ' ' + 'Computer ' + computerScore; // Old method
   return `Player: ${playerScore}\u00A0\u00A0\u00A0 Computer: ${computerScore}`; // Strings between backticks = template literal. \u00A0 (Non Breaking Whitespace?) is ugly, but works?
-}
+};
 
-function disableBtn() {
+const disableBtn = () => {
   document.getElementById('rockButton').disabled = true;
   document.getElementById('paperButton').disabled = true;
   document.getElementById('scissorsButton').disabled = true;
 }
 
-function enableBtn() {
+const enableBtn = () => {
   document.getElementById('rockButton').disabled = false;
   document.getElementById('paperButton').disabled = false;
   document.getElementById('scissorsButton').disabled = false;
 }
 
-function finishGame() {
+const finishGame = () => {
   playerScore = 0;
   computerScore = 0;
   score.innerHTML = ``;
@@ -100,7 +100,7 @@ function finishGame() {
 
 const resetButton = document.createElement('button'); // Has no class name until given one?
 
-function resetBtn() {
+const resetBtn = () => {
   // Appends or unhides the resetButton element, hides it upon click, and re-enables other buttons
   reset.appendChild(resetButton);
   resetButton.className = 'resetButton'; // Gave element class name to style it
@@ -111,7 +111,7 @@ function resetBtn() {
   });
 }
 
-function gameScore() {
+const gameScore = () => {
   if (playerScore === 5) {
     resetBtn(), disableBtn();
     return 'You win the game.';
