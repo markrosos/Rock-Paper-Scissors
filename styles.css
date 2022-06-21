@@ -30,7 +30,7 @@ body {
     color: black;
 }
 
-#container {
+#resultContainer {
   display: flex;
   flex: 0;
   justify-content: center;

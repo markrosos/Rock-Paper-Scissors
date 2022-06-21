@@ -102,12 +102,12 @@ scissorsBtn.addEventListener('click', () => {
     (endGame.textContent = gameResult());
 });
 
-const container = document.querySelector('#container');
+const resultContainer = document.querySelector('#resultContainer');
 
 const results = document.createElement('results');
 const score = document.createElement('score');
 const endGame = document.createElement('endGame');
 
-container.appendChild(results);
-container.appendChild(score);
-container.appendChild(endGame);
+resultContainer.appendChild(results);
+resultContainer.appendChild(score);
+resultContainer.appendChild(endGame);
