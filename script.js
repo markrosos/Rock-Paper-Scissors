@@ -57,7 +57,7 @@ const resetBtn = () => { // Appends and unhides the resetButton element, hides i
   });
 };
 
-const finishGame = () => {// Resets scores
+const finishGame = () => { // Resets scores
   playerScore = 0;
   computerScore = 0;
   score.innerHTML = ``;
