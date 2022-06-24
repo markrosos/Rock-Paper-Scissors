@@ -1,28 +1,28 @@
 let computerScore = 0;
 let playerScore = 0;
 
-const rps = ['rock', 'paper', 'scissors'];
+const rps = ['Rock', 'Paper', 'Scissors'];
 
 const computerPlay = () => {
   return rps[Math.floor(Math.random() * rps.length)];
 };
 
-const playRound = function (playerSelection, computerSelection) {
+const playRound = function(playerSelection, computerSelection) {
   computerSelection = computerPlay();
-  let lose = `You lose! ${computerSelection} beats ${playerSelection}`;
-  let win = `You win! ${playerSelection} beats ${computerSelection}`;
+  let lose = `You lose! ${computerSelection} beats ${playerSelection}.`;
+  let win = `You win! ${playerSelection} beats ${computerSelection}.`;
   let draw = 'You tie.';
   if (
-    (computerSelection == 'scissors' && playerSelection == 'rock') ||
-    (computerSelection == 'paper' && playerSelection == 'scissors') ||
-    (computerSelection == 'rock' && playerSelection == 'paper')
+    (computerSelection == 'Scissors' && playerSelection == 'Rock') ||
+    (computerSelection == 'Paper' && playerSelection == 'Scissors') ||
+    (computerSelection == 'Rock' && playerSelection == 'Paper')
   ) {
     playerScore++;
     return win;
   } else if (
-    (computerSelection == 'scissors' && playerSelection == 'paper') ||
-    (computerSelection == 'paper' && playerSelection == 'rock') ||
-    (computerSelection == 'rock' && playerSelection == 'scissors')
+    (computerSelection == 'Scissors' && playerSelection == 'Paper') ||
+    (computerSelection == 'Paper' && playerSelection == 'Rock') ||
+    (computerSelection == 'Rock' && playerSelection == 'Scissors')
   ) {
     computerScore++;
     return lose;
@@ -79,21 +79,21 @@ const enableBtn = () => {
 
 const rockBtn = document.querySelector('#rockBtn');
 rockBtn.addEventListener('click', () => {
-  (results.textContent = playRound('rock')),
+  (results.textContent = playRound('Rock')),
     (score.textContent = finalScore()),
     (endGame.textContent = gameResult());
 });
 
 const paperBtn = document.querySelector('#paperBtn');
 paperBtn.addEventListener('click', () => {
-  (results.textContent = playRound('paper')),
+  (results.textContent = playRound('Paper')),
     (score.textContent = finalScore()),
     (endGame.textContent = gameResult());
 });
 
 const scissorsBtn = document.querySelector('#scissorsBtn');
 scissorsBtn.addEventListener('click', () => {
-  (results.textContent = playRound('scissors')),
+  (results.textContent = playRound('Scissors')),
     (score.textContent = finalScore()),
     (endGame.textContent = gameResult());
 });
